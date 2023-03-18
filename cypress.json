@@ -1,5 +1,12 @@
 {
     "baseUrl": "http://localhost:3000",
     "viewportWidth": 1440,
-    "viewportHeight": 900
+    "viewportHeight": 900,
+    "dbConfig": {
+        "host": "drona.db.elephantsql.com",
+        "user": "sjhhsmzg",
+        "password": "vgXv5Pzzw54PwNgX7zfHRITv4qo5-3ao",
+        "database": "sjhhsmzg",
+        "port": 5432
+    }
 }
