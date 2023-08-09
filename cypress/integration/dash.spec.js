@@ -1,4 +1,3 @@
-import loginPage from '../support/pages/login'
 import dashPage from '../support/pages/dash/index'
 
 import { customer, provider, appointment } from '../support/factories/dash'
@@ -18,16 +17,14 @@ describe('dashboard', function () {
         })
 
         it('o mesmo deve ser exibido no dashboard', function () {
+            const date = Cypress.env('appoitmentDate')
 
-            loginPage.go()
-            loginPage.form(provider)
-            loginPage.submit()
+           // cy.uiLogin(provider)
+
+           cy.apiLogin(provider, true)
 
             dashPage.calendarShouldBeVisible()
-
-            const day = Cypress.env('appoitmentDay')
-            dashPage.selectDay(day)
-
+            dashPage.selectDay(date)
             dashPage.appointmentShouldBe(customer, appointment.hour)
 
         })
